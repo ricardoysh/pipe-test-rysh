@@ -1,0 +1,22 @@
+name: set-vars
+
+on:
+  workflow_call:
+
+    outputs:
+      sds:
+        value: ${{ jobs.get-vars.outputs.minha-variavel }}
+
+jobs:
+  set-vars:
+    runs-on: macos-latest
+    outputs:
+      minha-variavel: ${{ steps.get-vars.outputs.saudacao }}
+      
+    steps:
+      - name: set vars
+        id: get-vars
+        run: |
+          echo "## Get Vars"
+          echo "saudacao=Olá tudo bem?" >> $GITHUB_OUTPUT
+

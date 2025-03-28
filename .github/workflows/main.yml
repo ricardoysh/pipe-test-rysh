@@ -1,12 +1,19 @@
 name: pipeline-de-testes
 
 on:
-  workflow_dispatch:
+  push
 
 
 jobs:
+
+  vars:
+    uses: ./.github/workflows/set-vars.yml
+
   set-variables:
+    needs: vars
     runs-on: macos-latest
     steps:
       - name: set vars
-        run: echo "## Set Vars "
+        run: |
+          echo "## Set Vars "
+          echo ${{ needs.vars.outputs.sds }}
