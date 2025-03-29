@@ -25,5 +25,6 @@ jobs:
       - name: set outputs
         id: resolved
         run: |
-          echo "## ---------------------"
+          echo "## set variables"
+          echo "${{ env.saudacao }}"
           echo "saudacao: ${{ env.saudacao }}" >> GITHUB_OUTPUT

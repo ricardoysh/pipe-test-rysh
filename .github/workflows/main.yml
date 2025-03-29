@@ -15,8 +15,7 @@ jobs:
     needs: vars
     runs-on: macos-latest
     steps:
-      - name: set vars
-        id: xpto
+      - id: xpto
         run: |
           echo "## Set Vars "
-          echo "Saudacao: ${{ needs.vars.outputs.sds }}"
+          echo "${{ needs.vars.outputs.sds }}"
