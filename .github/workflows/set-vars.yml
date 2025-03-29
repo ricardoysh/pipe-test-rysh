@@ -20,3 +20,7 @@ jobs:
           echo "## Set Vars..."
           echo "saudacao=Olá tudo bem?" >> "$GITHUB_OUTPUT"
         ######### {{ steps.set-vars.outputs.saudacao }}
+  
+      - name: display vars
+        run: |
+          echo "Saudacao: ${{ env.saudacao }}"

@@ -11,7 +11,7 @@ jobs:
 
       # sds: {{ steps.vars.outputs.sds }}
 
-  set-variables:
+  job-1:
     needs: vars
     runs-on: macos-latest
     steps:
