@@ -17,6 +17,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: az login
-        run:
+        run: |
           echo "Realizando o az login..."
           echo "${{ inputs.APP_NAME }} :${{ inputs.IMG_TAG }}"
