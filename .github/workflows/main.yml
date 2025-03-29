@@ -8,8 +8,8 @@ jobs:
   vars:
     uses: ./.github/workflows/set-vars.yml
 
-    outputs:
-      sds: {{ steps.vars.outputs.sds }}
+
+      # sds: {{ steps.vars.outputs.sds }}
 
   set-variables:
     needs: vars
