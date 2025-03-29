@@ -32,7 +32,7 @@ jobs:
           echo "saudacao=Olá tudo bem?" >> $GITHUB_ENV
           echo "data=29/03/2025" >> $GITHUB_ENV
           echo "WEB=www.google.com.br" >> $GITHUB_ENV
-          echo "APP_NAME=app-ios-check-run" >>GITHUB_ENV
+          echo "APP_NAME=app-ios-check-run" >> $GITHUB_ENV
           echo "IMG_TAG=1.0.0" >> $GITHUB_ENV
         ######### {{ steps.set-vars.outputs.saudacao }}
   
