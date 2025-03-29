@@ -11,12 +11,12 @@ jobs:
   set-vars:
     runs-on: macos-latest
     outputs:
-      sds:           ${{ steps.get-vars.outputs.saudacao }}
+      sds: ${{ steps.get-vars.outputs.saudacao }}
       ###### 
     steps:
       - name: set vars
         id: set-vars
         run: |
           echo "## Set Vars..."
-          echo "saudacao=Olá tudo bem?" >> $GITHUB_OUTPUT
-          ######### {{ steps.set-vars.outputs.saudacao }}
+          echo "saudacao=Olá tudo bem?" >> "$GITHUB_OUTPUT"
+        ######### {{ steps.set-vars.outputs.saudacao }}
