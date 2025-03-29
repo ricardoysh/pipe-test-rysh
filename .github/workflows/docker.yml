@@ -19,4 +19,5 @@ jobs:
       - name: app name and img tag
         run: |
           echo "Show app name and img tag..."
-          echo "${{ inputs.APP_NAME }} :${{ inputs.IMG_TAG }}"
+          echo "APP: ${{ inputs.APP_NAME }}"
+          echo "TAG: ${{ inputs.IMG_TAG }}"
