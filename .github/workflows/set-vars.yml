@@ -9,7 +9,10 @@ on:
         value: ${{ jobs.set-vars.outputs.data }}
       WEB:
         value: ${{ jobs.set-vars.outputs.WEB }}
-
+      APP_NAME:
+        value: ${{ jobs.set-vars.outputs.APP_NAME }}
+      IMG_TAG:
+        value: ${{ jobs.set-vars.outputs.IMG_TAG }}
 jobs:
   set-vars:
     runs-on: macos-latest
@@ -17,6 +20,8 @@ jobs:
       sds: ${{ steps.resolved.outputs.saudacao }}
       data: ${{ steps.resolved.outputs.data }}
       WEB: ${{ steps.resolved.outputs.WEB }}
+      APP_NAME: ${{ steps.resolved.outputs.APP_NAME }}
+      IMG_TAG: ${{ steps.resolved.outputs.IMG_NAME }}
       ######
     steps:
         ####### SET VARS ###### SEND ENV ######
@@ -27,6 +32,8 @@ jobs:
           echo "saudacao=Olá tudo bem?" >> $GITHUB_ENV
           echo "data=29/03/2025" >> $GITHUB_ENV
           echo "WEB=www.google.com.br" >> $GITHUB_ENV
+          echo "APP_NAME=app-ios-check-run" >>GITHUB_ENV
+          echo "IMG_TAG=1.0.0" >> $GITHUB_ENV
         ######### {{ steps.set-vars.outputs.saudacao }}
   
       - name: set outputs
@@ -39,3 +46,5 @@ jobs:
           echo "saudacao=${{ env.saudacao }}" >> $GITHUB_OUTPUT
           echo "data=${{ env.data }}" >> $GITHUB_OUTPUT
           echo "WEB=${{ env.WEB }}" >> $GITHUB_OUTPUT
+          echo "APP_NAME=${{ env.APP_NAME }}" >> $GITLAB_OUTPUT
+          echo "IMG_TAG=${{ env.IMG_TAG }}" >> $GITLAB_OUTPUT

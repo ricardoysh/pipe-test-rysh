@@ -1,0 +1,22 @@
+name: docker
+
+on:
+  workflow_call:
+    inputs:
+      APP_NAME:
+        required: true
+        type: string
+      IMG_TAG:
+        required: true
+        type: string
+
+jobs:
+
+  build:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: az login
+        run:
+          echo "Realizando o az login..."
+          echo "${{ inputs.APP_NAME }} :${{ inputs.IMG_TAG }}"
