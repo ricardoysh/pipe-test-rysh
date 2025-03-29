@@ -19,6 +19,7 @@ jobs:
         run: |
           echo "## Set Vars..."
           echo "saudacao=Olá tudo bem?" >> $GITHUB_ENV
+          echo "data=29/03/2025" >> $GITHUB_ENV
         ######### {{ steps.set-vars.outputs.saudacao }}
   
       - name: set outputs
@@ -26,4 +27,7 @@ jobs:
         run: |
           echo "## set variables"
           echo "${{ env.saudacao }}"
+          echo "${{ env.data }}"
           echo "saudacao=${{ env.saudacao }}" >> $GITHUB_OUTPUT
+          echo "data=${{ env.data }}" >> $GITHUB_OUTPUT
+
