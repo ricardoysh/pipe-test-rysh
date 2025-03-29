@@ -5,13 +5,13 @@ on:
 
     outputs:
       sds:
-        value: ${{ jobs.get-vars.outputs.sds }}
+        value: ${{ jobs.set-vars.outputs.sds }}
 
 jobs:
   set-vars:
     runs-on: macos-latest
     outputs:
-      sds: ${{ steps.get-vars.outputs.saudacao }}
+      sds: ${{ steps.resolved.outputs.saudacao }}
       ###### 
     steps:
         ####### SET VARS ###### SEND ENV ######
@@ -25,5 +25,5 @@ jobs:
       - name: set outputs
         id: resolved
         run: |
-          echo "Saudacao: ${{ env.saudacao }}"
-          echo "sds: ${{ env.saudacao }}" >> GITHUB_OUTPUT
+          echo "## ---------------------"
+          echo "saudacao: ${{ env.saudacao }}" >> GITHUB_OUTPUT
