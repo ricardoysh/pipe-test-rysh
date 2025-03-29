@@ -33,6 +33,6 @@ jobs:
     steps:
       - name: test
         run: |
-          echo "WEB: ${{ needs.set-vars.outputs.WED }}"     
+          echo "WEB: ${{ needs.set-vars.outputs.WEB }}"     
 
 
