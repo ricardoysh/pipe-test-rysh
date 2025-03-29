@@ -43,6 +43,7 @@ jobs:
     steps:
       - name: application tests
         run: |
-          echo ${{ needs.job2.outputs.NEW_WEB }}
-
+          echo "NEW_WEB_IS: $NEW_WEB"
+        env:
+          NEW_WEB: ${{ needs.job2.outputs.NEW_WEB }}
 
