@@ -25,8 +25,14 @@ jobs:
           echo "----------------------------------"
           echo "${{ needs.set-vars.outputs.sds }}"
           echo "${{ needs.set-vars.outputs.data }}"
+          echo "${{ needs.set-vars.outputs.WEB }}"
+
+  job2:
+    needs: set-vars
+    runs-on: macos-latest
+    steps:
+      - name: test
+        run: |
+          echo "WEB: ${{ needs.set-vars.outputs.WED }}"     
 
 
-
-
-          

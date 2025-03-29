@@ -7,6 +7,8 @@ on:
         value: ${{ jobs.set-vars.outputs.sds }}
       data:
         value: ${{ jobs.set-vars.outputs.data }}
+      WEB:
+        value: ${{ jobs.set-vars.outputs.WEB }}
 
 jobs:
   set-vars:
@@ -14,6 +16,7 @@ jobs:
     outputs:
       sds: ${{ steps.resolved.outputs.saudacao }}
       data: ${{ steps.resolved.outputs.data }}
+      WEB: ${{ steps.resolved.outputs.WEB }}
       ######
     steps:
         ####### SET VARS ###### SEND ENV ######
@@ -23,6 +26,7 @@ jobs:
           echo "## Set Vars..."
           echo "saudacao=Olá tudo bem?" >> $GITHUB_ENV
           echo "data=29/03/2025" >> $GITHUB_ENV
+          echo "WEB=www.google.com.br" >> $GITHUB_ENV
         ######### {{ steps.set-vars.outputs.saudacao }}
   
       - name: set outputs
@@ -31,6 +35,7 @@ jobs:
           echo "## set variables"
           echo "${{ env.saudacao }}"
           echo "${{ env.data }}"
+          echo "${{ env.WEB }}"
           echo "saudacao=${{ env.saudacao }}" >> $GITHUB_OUTPUT
           echo "data=${{ env.data }}" >> $GITHUB_OUTPUT
-
+          echo "WEB=${{ env.WEB }}" >> $GITHUB_OUTPUT
