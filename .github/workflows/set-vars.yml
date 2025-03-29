@@ -5,13 +5,16 @@ on:
     outputs:
       sds:
         value: ${{ jobs.set-vars.outputs.sds }}
+      data:
+        value: ${{ jobs.set-vars.outputs.data }}
 
 jobs:
   set-vars:
     runs-on: macos-latest
     outputs:
       sds: ${{ steps.resolved.outputs.saudacao }}
-      ###### 
+      data: ${{ steps.resolved.outputs.data }}
+      ######
     steps:
         ####### SET VARS ###### SEND ENV ######
       - name: set vars

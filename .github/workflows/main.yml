@@ -22,4 +22,11 @@ jobs:
         id: xpto
         run: |
           echo "## Set Vars "
-          echo "${{ needs.vars.outputs.sds }}"
+          echo "----------------------------------"
+          echo "${{ needs.set-vars.outputs.sds }}"
+          echo "${{ needs.set-vars.outputs.data }}"
+
+
+
+
+          
