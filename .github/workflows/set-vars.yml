@@ -14,6 +14,7 @@ jobs:
       sds: ${{ steps.get-vars.outputs.saudacao }}
       ###### 
     steps:
+        ####### SET VARS ###### SEND ENV ######
       - name: set vars
         id: set-vars
         run: |
@@ -21,6 +22,8 @@ jobs:
           echo "saudacao=Olá tudo bem?" >> "$GITHUB_ENV"
         ######### {{ steps.set-vars.outputs.saudacao }}
   
-      - name: display vars
+      - name: set outputs
+        id: resolved
         run: |
           echo "Saudacao: ${{ env.saudacao }}"
+          echo "sds: ${{ env.saudacao }}" >> GITHUB_OUTPUT
