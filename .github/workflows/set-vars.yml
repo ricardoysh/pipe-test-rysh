@@ -46,5 +46,5 @@ jobs:
           echo "saudacao=${{ env.saudacao }}" >> $GITHUB_OUTPUT
           echo "data=${{ env.data }}" >> $GITHUB_OUTPUT
           echo "WEB=${{ env.WEB }}" >> $GITHUB_OUTPUT
-          echo "APP_NAME=${{ env.APP_NAME }}" >> $GITLAB_OUTPUT
-          echo "IMG_TAG=${{ env.IMG_TAG }}" >> $GITLAB_OUTPUT
+          echo "APP_NAME=${{ env.APP_NAME }}" >> $GITHUB_OUTPUT
+          echo "IMG_TAG=${{ env.IMG_TAG }}" >> $GITHUB_OUTPUT
