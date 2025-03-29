@@ -21,7 +21,7 @@ jobs:
       data: ${{ steps.resolved.outputs.data }}
       WEB: ${{ steps.resolved.outputs.WEB }}
       APP_NAME: ${{ steps.resolved.outputs.APP_NAME }}
-      IMG_TAG: ${{ steps.resolved.outputs.IMG_NAME }}
+      VERSION: ${{ steps.resolved.outputs.VERSION }}
       ######
     steps:
         ####### SET VARS ###### SEND ENV ######
