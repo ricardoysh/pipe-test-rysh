@@ -19,4 +19,4 @@ jobs:
         id: xpto
         run: |
           echo "## Set Vars "
-          echo ${{ needs.vars.outputs.sds }}
+          echo "Saudacao: ${{ needs.vars.outputs.sds }}"

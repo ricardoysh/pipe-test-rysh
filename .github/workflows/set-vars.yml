@@ -5,18 +5,18 @@ on:
 
     outputs:
       sds:
-        value: ${{ jobs.get-vars.outputs.minha-variavel }}
+        value: ${{ jobs.get-vars.outputs.sds }}
 
 jobs:
   set-vars:
     runs-on: macos-latest
     outputs:
-      minha-variavel: ${{ steps.get-vars.outputs.saudacao }}
-      
+      sds:           ${{ steps.get-vars.outputs.saudacao }}
+      ###### 
     steps:
       - name: set vars
-        id: get-vars
+        id: set-vars
         run: |
-          echo "## Get Vars"
+          echo "## Set Vars..."
           echo "saudacao=Olá tudo bem?" >> $GITHUB_OUTPUT
-
+          ######### {{ steps.set-vars.outputs.saudacao }}
