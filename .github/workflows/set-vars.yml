@@ -26,4 +26,4 @@ jobs:
         run: |
           echo "## set variables"
           echo "${{ env.saudacao }}"
-          echo "saudacao=${{ env.saudacao }}" >> "$GITHUB_OUTPUT"
+          echo "saudacao=${{ env.saudacao }}" >> $GITHUB_OUTPUT
