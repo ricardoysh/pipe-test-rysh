@@ -30,9 +30,20 @@ jobs:
   job2:
     needs: set-vars
     runs-on: macos-latest
+    outputs:
+      NEW_WEB: ${{ needs.set-vars.outputs.WEB }}"
     steps:
       - name: test
         run: |
           echo "WEB: ${{ needs.set-vars.outputs.WEB }}"     
+
+  tests:
+    needs: job2
+    runs-on: macos-latest
+    steps:
+      - name: application tests
+        run: |
+          echo "#### Tests"
+          echo "${{ needs.job2.outputs.NEW_WEB }}"
 
 
