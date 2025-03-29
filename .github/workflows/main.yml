@@ -43,7 +43,6 @@ jobs:
     steps:
       - name: application tests
         run: |
-          echo "#### Tests"
           echo "${{ needs.job2.outputs.NEW_WEB }}"
 
 
