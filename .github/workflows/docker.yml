@@ -16,7 +16,7 @@ jobs:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v3
-      - name: az login
+      - name: app name and img tag
         run: |
-          echo "Realizando o az login..."
+          echo "Show app name and img tag..."
           echo "${{ inputs.APP_NAME }} :${{ inputs.IMG_TAG }}"
