@@ -11,8 +11,8 @@ on:
         value: ${{ jobs.set-vars.outputs.WEB }}
       APP_NAME:
         value: ${{ jobs.set-vars.outputs.APP_NAME }}
-      IMG_TAG:
-        value: ${{ jobs.set-vars.outputs.IMG_TAG }}
+      VERSION:
+        value: ${{ jobs.set-vars.outputs.VERSION }}
 jobs:
   set-vars:
     runs-on: macos-latest
@@ -33,7 +33,7 @@ jobs:
           echo "data=29/03/2025" >> $GITHUB_ENV
           echo "WEB=www.google.com.br" >> $GITHUB_ENV
           echo "APP_NAME=app-ios-check-run" >> $GITHUB_ENV
-          echo "IMG_TAG=1.0.0" >> $GITHUB_ENV
+          echo "VERSION=1.0.0" >> $GITHUB_ENV
         ######### {{ steps.set-vars.outputs.saudacao }}
   
       - name: set outputs
@@ -44,10 +44,10 @@ jobs:
           echo "${{ env.data }}"
           echo "${{ env.WEB }}"
           echo "${{ env.APP_NAME }}"
-          echo "${{ env.IMG_TAG }}"
+          echo "${{ env.VERSION }}"
           echo "-----------------------------------------------"
           echo "saudacao=${{ env.saudacao }}" >> $GITHUB_OUTPUT
           echo "data=${{ env.data }}" >> $GITHUB_OUTPUT
           echo "WEB=${{ env.WEB }}" >> $GITHUB_OUTPUT
           echo "APP_NAME=${{ env.APP_NAME }}" >> $GITHUB_OUTPUT
-          echo "IMG_TAG=${{ env.IMG_TAG }}" >> $GITHUB_OUTPUT
+          echo "VERSION=${{ env.VERSION }}" >> $GITHUB_OUTPUT

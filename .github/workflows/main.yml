@@ -37,19 +37,19 @@ jobs:
         run: |
           echo "WEB: ${{ needs.set-vars.outputs.WEB }}"     
 
-  tests:
-    needs: job2
-    runs-on: macos-latest
-    steps:
-      - name: application tests
-        run: |
-          echo "NEW_WEB_IS: $NEW_WEB"
-        env:
-          NEW_WEB: ${{ needs.job2.outputs.NEW_WEB }}
+  # tests:
+  #   needs: job2
+  #   runs-on: macos-latest
+  #   steps:
+  #     - name: application tests
+  #       run: |
+  #         echo "NEW_WEB_IS: $NEW_WEB"
+  #       env:
+  #         NEW_WEB: ${{ needs.job2.outputs.NEW_WEB }}
 
   docker:
     uses: ./.github/workflows/docker.yml
     needs: set-vars
     with:
       APP_NAME: ${{ needs.set-vars.outputs.APP_NAME }}
-      IMG_TAG: ${{ needs.set-vars.outputs.IMG_TAG }}
+      VERSION: ${{ needs.set-vars.outputs.VERSION }}

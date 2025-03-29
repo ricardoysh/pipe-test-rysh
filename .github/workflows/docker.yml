@@ -20,4 +20,4 @@ jobs:
         run: |
           echo "Show app name and img tag..."
           echo "APP: ${{ inputs.APP_NAME }}"
-          echo "TAG: ${{ inputs.IMG_TAG }}"
+          echo "VERSION: ${{ inputs.VERSION }}"
