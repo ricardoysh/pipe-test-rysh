@@ -52,4 +52,4 @@ jobs:
     needs: set-vars
     with:
       APP_NAME: ${{ needs.set-vars.outputs.APP_NAME }}
-      IMG_TAG: ${{ needs.set-vars.outputs.IMG_TAG}}
+      IMG_TAG: ${{ needs.set-vars.outputs.IMG_TAG }}
