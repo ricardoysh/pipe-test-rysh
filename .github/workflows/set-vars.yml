@@ -2,7 +2,6 @@ name: set-vars
 
 on:
   workflow_call:
-
     outputs:
       sds:
         value: ${{ jobs.set-vars.outputs.sds }}
@@ -19,7 +18,7 @@ jobs:
         id: set-vars
         run: |
           echo "## Set Vars..."
-          echo "saudacao=Olá tudo bem?" >> "$GITHUB_ENV"
+          echo "saudacao=Olá tudo bem?" >> GITHUB_ENV
         ######### {{ steps.set-vars.outputs.saudacao }}
   
       - name: set outputs

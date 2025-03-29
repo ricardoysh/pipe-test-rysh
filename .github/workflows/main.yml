@@ -5,17 +5,21 @@ on:
 
 
 jobs:
-  vars:
+  #---------- job 1 ------------------------
+  set-vars:
     uses: ./.github/workflows/set-vars.yml
+  
 
 
       # sds: {{ steps.vars.outputs.sds }}
-
+  #----------- job 2 ----------------------
   job-1:
-    needs: vars
+    needs: set-vars
     runs-on: macos-latest
+
     steps:
-      - id: xpto
+      - name: display
+        id: xpto
         run: |
           echo "## Set Vars "
           echo "${{ needs.vars.outputs.sds }}"
