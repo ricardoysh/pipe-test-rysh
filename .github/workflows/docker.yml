@@ -6,7 +6,7 @@ on:
       APP_NAME:
         required: true
         type: string
-      IMG_TAG:
+      VERSION:
         required: true
         type: string
 

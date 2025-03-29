@@ -47,9 +47,9 @@ jobs:
         env:
           NEW_WEB: ${{ needs.job2.outputs.NEW_WEB }}
 
-  # docker:
-  #   uses: ./.github/workflows/docker.yml
-  #   needs: set-vars
-  #   with:
-  #     APP_NAME: ${{ needs.set-vars.outputs.APP_NAME }}
-  #     VERSION: ${{ needs.set-vars.outputs.VERSION }}
+  docker:
+    uses: ./.github/workflows/docker.yml
+    needs: set-vars
+    with:
+      APP_NAME: ${{ needs.set-vars.outputs.APP_NAME }}
+      VERSION: ${{ needs.set-vars.outputs.VERSION }}
